@@ -1,0 +1,35 @@
+/* Put your CSS here */
+html, body {
+    margin: 20px;
+}
+
+
+
+@keyframes domChanged { from { background: yellow; } }
+@-webkit-keyframes domChanged { from { background: yellow; } }
+.ember-view { animation: domChanged 1s; -webkit-animation: domChanged 1s; }
+
+
+.ui-widget {
+	font-size: 0.1em;
+}
+
+.ui-datepicker-title {
+	font-size: 0.8em;
+}
+
+.ui-datepicker-title:hover {
+  cursor: pointer;
+}
+
+.ui-datepicker, .ui-datepicker td, .ui-datepicker th, .ui-datepicker button
+{
+  font-size: 0.8em;
+}
+
+
+$body-bg: #fff;
+$topbar-bg: #111;
+
+@import "foundation";
+@import "foundation/settings";

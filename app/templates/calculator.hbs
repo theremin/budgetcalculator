@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="large-12 show-for-middle columns">&nbsp</div>
+    <div class="small-2 middle-2 large-2 columns">{{view 'calendar'}}</div>
+    <div class="small-8 middle-8 large-8 columns" role="content">
+        <table width="100%">
+            <thead>
+                <tr>                    
+                    {{view 'table.header-sort' text="Date" property="date" }}
+                    {{view 'table.header-sort' text="Business" property="business" }}
+                    {{view 'table.header-sort' text="Amount" property="amount" }}
+                    <td width="150"></td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each budget in controller}}
+                <tr>
+                    <td width="150">{{format-date date}}</td>
+                    <td width="400">{{business}}</td> 
+                    <td width="150">{{format-currency amount}}</td>
+                    <td width="150"></td>
+                </tr>
+                {{/each}}
+            </tbody>
+            <tfooter>
+                <tr>
+                    <th width="150">{{format-date currentSelectedDate}}</th>
+                    <td width="400">{{view Ember.TextField valueBinding="newBusiness" placeholder="Business"}}</td> 
+                    <td width="150">{{view 'input.currency' valueBinding="newAount" placeholder="##.##"}}</td>
+                    <td width="150"><button class="tiny round" {{action 'addBudget'}}>Add</button></td>
+                </tr>
+            </tfooter>
+        </table>
+</div>
+  
+</div>
