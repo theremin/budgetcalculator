@@ -1,7 +1,4 @@
 export default Ember.Route.extend({
-
-
-
     model: function() {
         var store = this.get('store');
         return store.find('budget');
@@ -13,9 +10,8 @@ export default Ember.Route.extend({
                 date: this.get('controller.currentSelectedDate'),
                 business: this.get('controller.newBusiness'),
                 amount: this.get('controller.newAount')
-            });
-
-            tBudget.save( );
+            });            
+            tBudget.save();
         },
 
         sort : function() {

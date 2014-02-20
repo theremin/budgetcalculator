@@ -10,4 +10,8 @@ var App = Ember.Application.extend({
   Resolver: Resolver['default']
 });
 
+Ember.TextSupport.reopen({  
+    attributeBindings: ["required","pattern"]  
+});
+
 export default App;

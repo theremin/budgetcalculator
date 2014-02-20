@@ -9,9 +9,13 @@ Router.map( function () {
     this.resource("calculator", function() {
         //this.resource("calculate");
     });
-    this.resource("settings", function() {
-        //this.route("settings");
+    this.resource("settings" , function() {    
     });
+
+    this.resource("user" , function() {
+    });
+
+
 });
 
 export default Router;

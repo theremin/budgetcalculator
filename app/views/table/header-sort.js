@@ -3,7 +3,7 @@ export default Ember.View.extend({
 
     tagName : "th",
 
-    template: Ember.Handlebars.compile('{{view.text}} <span class="right"><i {{bindAttr class="view.icon :noPrint"}}></i></span>'),
+    template: Ember.Handlebars.compile('{{view.text}} <span class="right"><i {{bind-attr class="view.icon :noPrint"}}></i></span>'),
 
     classNames: ['pointerCursor'],
 

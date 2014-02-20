@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="large-12 show-for-middle columns" role="content">
+        {{#view 'form.foundation'}}
+        <fieldset>
+            <legend>User</legend>
+            <div class="row">
+                <div class="large-12 show-for-middle columns">
+                <table width="100%">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Renke</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Anita</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td width="150">{{view 'input.currency' valueBinding="newUser" placeholder="Name"}}</td>
+                        <td width="150"><button class="budget-button" {{action 'adduser'}}>Add</button></td>
+                    </tr>
+                    </tfoot>
+                </table>
+                </div>            
+            </div>
+        </fieldset>         
+        {{/view}}
+    </div>
+</div>

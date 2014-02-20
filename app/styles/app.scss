@@ -1,9 +1,12 @@
+$body-bg: #ffffff;
+$topbar-bg: #47423F;
+
+$input-bg-color: #ff00ff;
+
 /* Put your CSS here */
 html, body {
     margin: 20px;
 }
-
-
 
 @keyframes domChanged { from { background: yellow; } }
 @-webkit-keyframes domChanged { from { background: yellow; } }
@@ -27,9 +30,6 @@ html, body {
   font-size: 0.8em;
 }
 
-
-$body-bg: #fff;
-$topbar-bg: #111;
-
 @import "foundation";
 @import "foundation/settings";
+@import "foundation/functions";

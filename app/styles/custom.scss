@@ -1,0 +1,24 @@
+
+@import "foundation/components/buttons";
+@import "foundation/components/forms";
+
+$bg: #62868D;
+$radius: true;
+$full-width: false;
+$disabled: false;
+$is-input: false;
+
+$button-font-tny: rem-calc( 12 );
+$button-tny: rem-calc( 4 );
+
+.budget-button {
+    @include button(
+        $button-tny, 
+        $bg, $radius, 
+        $full-width, 
+        $disabled, 
+        $is-input, 
+        $button-font-tny
+    );
+}
+

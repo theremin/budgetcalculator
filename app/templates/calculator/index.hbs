@@ -1,8 +1,11 @@
 <div class="row">
-    <div class="large-12 show-for-middle columns">&nbsp</div>
-    <div class="small-2 middle-2 large-2 columns">{{view 'calendar'}}</div>
-    <div class="small-8 middle-8 large-8 columns" role="content">
-        <table width="100%">
+    <div class="large-3 medium-4 columns">
+        
+        {{view 'calendar'}} 
+        
+    </div>
+    <div class="large-9 medium-8 columns" role="content">
+        <table>
             <thead>
                 <tr>                    
                     {{view 'table.header-sort' text="Date" property="date" }}
@@ -26,10 +29,10 @@
                     <th width="150">{{format-date currentSelectedDate}}</th>
                     <td width="400">{{view Ember.TextField valueBinding="newBusiness" placeholder="Business"}}</td> 
                     <td width="150">{{view 'input.currency' valueBinding="newAount" placeholder="##.##"}}</td>
-                    <td width="150"><button class="tiny round" {{action 'addBudget'}}>Add</button></td>
+                    <td width="150"><button class="budget-button" {{action 'addBudget'}}>Add</button></td>
                 </tr>
             </tfooter>
         </table>
-</div>
+    </div>
   
 </div>
