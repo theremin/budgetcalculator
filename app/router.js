@@ -6,14 +6,19 @@ Router.map( function () {
     // this.resource('posts', function() {
     //   this.route('new');
     // });
+    this.resource("dashboard" , function() {        
+    });
+
     this.resource("calculator", function() {
         //this.resource("calculate");
     });
-    this.resource("settings" , function() {    
+    this.resource("settings" , function() {
+       this.resource("user");
+       this.resource("categories");
     });
+    
 
-    this.resource("user" , function() {
-    });
+    
 
 
 });

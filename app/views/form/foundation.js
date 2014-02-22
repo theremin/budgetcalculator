@@ -7,8 +7,7 @@ export default Ember.View.extend({
 
     didInsertElement : function() {
         var tSelf = this;
-
-        Ember.Logger.log("> ", $(this.get('element')) );
+        //Ember.Logger.log("> ", $(this.get('element')) );
         $(this.get('element')).on({
             'invalid' : function(){
                 Ember.Logger.log("IN");

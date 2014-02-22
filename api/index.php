@@ -1,15 +1,12 @@
 <?php
-	header('Access-Control-Allow-Origin: *');
-	header("Content-Type: application/json");
-	header('Access-Control-Allow-Headers: X-Requested-With, X-AUTHENTICATION, X-IP');
-	header('Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT');
-	header('Access-Control-Max-Age: 1728000');
-	
-	require_once "./vendor/autoload.php";
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+    header("Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT");
+    require_once "./vendor/autoload.php";
 
-	\Slim\Slim::registerAutoloader();
+    \Slim\Slim::registerAutoloader();
 
-	$app = new \Slim\Slim();
+    $app = new \Slim\Slim();
     
     $app->config(array(
         'debug' => true
@@ -31,54 +28,66 @@
     $logger->setLevel(\Slim\Log::DEBUG);
     $environment = \Slim\Environment::getInstance();
 
+    /**
+     *
+     *
+     */
     $app->get("/", function() {
     
-	});
-	$app->get("/budgets", function () use ($app, $db) {
-		$budgets = array();
-		foreach ($db->budget() as $budget) {
-			$budgets[] = array(
-				"id" => $budget["id"],
-				"business" => $budget["business"],
-				"amount" => $budget["amount"],
-				"date" => $budget["date"]
-			);
-		};
-		$app->response()->header("Content-Type", "application/json");
-		echo json_encode(array("budget"=>$budgets)); 
-	});
+    });
+    /**
+     *
+     *
+     */
+    $app->get("/budgets", function () use ($app, $db) {
+        $budgets = array();
+        foreach ($db->budget() as $budget) {
+            $budgets[] = array(
+                "id" => $budget["id"],
+                "business" => $budget["business"],
+                "amount" => $budget["amount"],
+                "date" => $budget["date"]
+            );
+        };
+        $app->response()->header("Content-Type", "application/json");
+        echo json_encode(array("budget"=>$budgets)); 
+    });
+    $app->post("/budgets", function () use ($app, $db) {
+        GLOBAL $logger;
+        $app->response()->header("Content-Type", "application/json");
+        $budget = $app->request()->getBody();
+        $budget = json_decode($budget);
+        //$test = $budget->budget->business;
+        //$logger->debug($test);
+        $result = $db->budget->insert( array('business'=>$budget->budget->business,'amount'=>$budget->budget->amount,'date'=>$budget->budget->date) );
 
-	// $app->options("/budgets", function () use ($app, $db) {
-	// 	$app->response()->header("Content-Type", "text/plain");
-		
-	// 	$b = $app->request()->post();
-	// 	$log = $app->getLog();
- //    	//$log->debug("test".$b);
-		
-	// 	//$result = $db->budget->insert( array($b->budget));		
-	// });
-	// $app->options("/budgets", function () use ($app, $db) {
-	// 	//$app->response()->header("Content-Type", "text/plain");
-	// 	$b = $app->request()->getBody();
-	// 	//$result = $db->budget->insert( array($b) )
+    });
 
-	// });
-	// $app->options("/budgets", function () use ($app, $db) {
-	// 	GLOBAL $logger;
-	// 	$app->response()->header("Content-Type", "application/json");
-	// 	$b = $app->request()->getBody();
-	// 	$b = json_decode($b);
-	// 	$logger->debug('test'.$b->budget);
-	// 	//$result = $db->budget->insert( array('business'=>$b->budget->date,'amount'=>'a','date'=>'d') );
+    /**
+     *
+     *
+     */
+    $app->get("/users", function () use ($app, $db) {
+        $users = array();
+        foreach ($db->user() as $user) {
+            $users[] = array(
+                "id" => $user["id"],
+                "name" => $user["name"],                
+            );
+        };
+        $app->response()->header("Content-Type", "application/json");
+        echo json_encode(array("user"=>$users)); 
+    });
+    $app->post("/users", function () use ($app, $db) {
+        GLOBAL $logger;
+        $app->response()->header("Content-Type", "application/json");
+        $user = $app->request()->getBody();
+        $user = json_decode($user);
+        // $test = $user->user->name;
+        // $logger->debug($test);
+        $result = $db->user->insert( array('name'=>$user->user->name) );
 
-	// });
-	$app->post("/budgets", function () use ($app, $db) {
-		GLOBAL $logger;
-		$app->response()->header("Content-Type", "application/json");
-		$b = $app->request()->getBody();
-		$b = json_decode($b);
-		$logger->debug('test');
-	});
+    });
 
     $app->run();
 ?>

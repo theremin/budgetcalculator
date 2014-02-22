@@ -1,4 +1,4 @@
-var budget = DS.Model.extend({
+var user = DS.Model.extend({
     name : DS.attr('string')
 });
-export default budget;
+export default user;

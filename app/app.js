@@ -14,4 +14,11 @@ Ember.TextSupport.reopen({
     attributeBindings: ["required","pattern"]  
 });
 
+$.ajaxSetup({
+	headers: {
+		'Accept': 'application/json',
+		'Content-Type': 'text/plain'
+    }
+});
+
 export default App;
