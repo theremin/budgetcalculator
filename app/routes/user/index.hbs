@@ -1,7 +1,0 @@
-export default Ember.Route.extend({
-    model: function() {
-        Ember.Logger.log("ROUTE User");
-        var store = this.get('store');  
-        return store.find('user');
-    }
-});

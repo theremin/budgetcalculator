@@ -1,9 +1,8 @@
 export default Ember.ArrayController.extend({
 
 
-    // faSort : function() {
-    //  return "fa fa-sort-asc"
-    // }.property('sortAscending'),
+    needs : 'user',
+    user: Ember.computed.alias("controllers.user"),
 
     itemController: 'budget',
 

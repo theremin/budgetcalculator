@@ -13,16 +13,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {{#each user in controller}}
+                    {{#each user in content}}
                     <tr>
-                        <th>{{name}}</th>
-                        <th></th>
+                        <td>{{user.name}}</th>
+                        <td></th>
                     </tr>
                     {{/each}}
+                    
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td width="150">{{view 'input.currency' valueBinding="newUserName" placeholder="Name"}}</td>
+                        <td width="150">{{view 'input.currency' valueBinding="controller.newUserName" placeholder="Name"}}</td>
                         <td width="150"><button class="budget-button" {{action 'addUser'}}>Add</button></td>
                     </tr>
                     </tfoot>

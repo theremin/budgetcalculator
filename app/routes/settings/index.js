@@ -1,31 +1,20 @@
 export default Ember.Route.extend({
     
-    setupController: function(controller, model) {
-        Ember.Logger.log(">setupController: ", controller, model);
-        //controller.set('model', user.get('user'));
+    setupController: function(controller) {    
+        // Ember.Logger.log(">setupController: ");
+        // var tUserModel = this.get('store').find('user');
+        // this.controllerFor('user').set('user', tUserModel)
+        
     },
 
     renderTemplate : function() {
         //Ember.Logger.log("renderTemplate:");
-
-        this.render('user.index',{
-            outlet : 'user',
-            into: 'settings'            
-        });
-
-        this.render('categories.index', {
-            outlet : 'categories'
-        });
-    },
-    // actions : {
-    //     addUser : function() {
-    //         Ember.Logger.log("route addUser", this.get('controller.newUserName'));
-    //         // var tStore = this.get('store');
-    //         // var tUser = tStore.createRecord('user', {
-    //         //     user: this.get('controller.newUserName')                
-    //         // });            
-    //         // tUser.save();
-    //     }
-    // }
-
+        // this.render('user.index',{
+        //     outlet : 'user',
+        //     into: 'settings'            
+        // });
+        // this.render('categories.index', {
+        //     outlet : 'categories'
+        // });
+    }
 });

@@ -1,25 +1,22 @@
+// controllers/user.js
 export default Ember.ArrayController.extend({
 
     itemController: 'user',
 
-    sortProperties: ['name'],
+    init : function() {
 
-    sortAscending: false,
+        this.set('content', this.get('store').find('user'));
+    },
 
     actions : {
-        changeSorting : function() {
-            this.set('sortAscending', !this.get('sortAscending'));
-        },       
         addUser : function() {
-            Ember.Logger.log("addUser", this.get('newUserName'), this.get('model'))
+            Ember.Logger.log("addUser...", this.get('newUserName'))
              
             var tStore = this.get('store');
             var tUser = tStore.createRecord('user', {
-                name: this.get('newUserName')                
+                name: this.get('newUserName')
             });            
             tUser.save();
-             
-
         }
     }
 

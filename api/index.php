@@ -83,8 +83,8 @@
         $app->response()->header("Content-Type", "application/json");
         $user = $app->request()->getBody();
         $user = json_decode($user);
-        // $test = $user->user->name;
-        // $logger->debug($test);
+        //$test = $user->user->name;
+        //$logger->debug($test);
         $result = $db->user->insert( array('name'=>$user->user->name) );
 
     });
