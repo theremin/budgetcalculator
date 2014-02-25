@@ -10,13 +10,16 @@ export default Ember.ArrayController.extend({
 
     actions : {
         addUser : function() {
-            Ember.Logger.log("addUser...", this.get('newUserName'))
+            Ember.Logger.log("addUser...", this.get('newUserName'));
              
             var tStore = this.get('store');
             var tUser = tStore.createRecord('user', {
                 name: this.get('newUserName')
             });            
             tUser.save();
+        },
+        deleteUser : function( pUser ) {
+            Ember.Logger.log("deleteUser...", pUser.get('id'));
         }
     }
 

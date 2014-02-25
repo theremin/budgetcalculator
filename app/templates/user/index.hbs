@@ -13,11 +13,20 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {{#each user in content}}
+                    {{#each content}}
+                    {{#if isEditing}}
                     <tr>
-                        <td>{{user.name}}</th>
+                        <td>{{view Ember.TextField valueBinding="name" }}</th>
+                        <td>
+                            <button {{action 'openModal' 'confirm_delete' this}} data-reveal-id="confirm_modal" data-reveal>Delete{{id}}</button>
+                        </th>
+                    </tr>
+                    {{else}}
+                    <tr>
+                        <td>{{name}}</th>
                         <td></th>
                     </tr>
+                    {{/if}}
                     {{/each}}
                     
                     </tbody>
