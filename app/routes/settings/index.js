@@ -8,13 +8,13 @@ export default Ember.Route.extend({
     },
 
     renderTemplate : function() {
-        //Ember.Logger.log("renderTemplate:");
-        // this.render('user.index',{
-        //     outlet : 'user',
-        //     into: 'settings'            
-        // });
-        // this.render('categories.index', {
-        //     outlet : 'categories'
-        // });
+        Ember.Logger.log("renderTemplate:");
+        this.render('user.index',{
+            outlet : 'user',
+            into: 'settings'            
+        });
+        this.render('categories.index', {
+            outlet : 'categories'
+        });
     }
 });

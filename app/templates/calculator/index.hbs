@@ -6,14 +6,8 @@
     </div>
     <div class="large-9 medium-8 columns" role="content">
         
-        <dl class="sub-nav">
-            <dt>Filter:</dt>
-            <dd class="active"><a href="#">All</a></dd>
-            {{user.content}}
-            {{#each item in user.content}}
-                <dd><a href="#">>{{ item.name }}</a></dd>            
-            {{/each}}
-        </dl>
+        
+        {{render "filter.user" user}}
 
         <table>
             <thead>

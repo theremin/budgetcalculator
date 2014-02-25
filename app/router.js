@@ -12,8 +12,8 @@ Router.map( function () {
     this.resource("calculator", function() {
     });
     this.resource("settings" , function() {
-       // this.resource("user");
-       // this.resource("categories");
+       this.resource("user");
+       this.resource("categories");
     });
     
 
