@@ -1,2 +1,12 @@
-{{outlet "user"}}
-{{outlet "categories"}}
+<div class="row">
+	<div class="large-12 columns">
+	<dl class="sub-nav right">		
+		<dd>{{#link-to 'settings.user'}}User{{/link-to}}</dd>
+		<dd>{{#link-to 'settings.category'}}Categories{{/link-to}}</dd>
+	</dl>
+
+	
+	
+	  {{outlet}}
+	
+</div>

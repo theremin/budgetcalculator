@@ -21,11 +21,9 @@ $.ajaxSetup({
     }
 });
 
-$(document).on('close', '[data-reveal]', function () {
-  var modal = $(this);
-  console.log("TEST  pdaspfojdspo", modal);
-
-
-});
+// $(document).on('close', '[data-reveal]', function () {
+//   var modal = $(this);
+//   console.log("TEST  pdaspfojdspo", modal);
+// });
 
 export default App;

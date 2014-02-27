@@ -1,0 +1,9 @@
+<dl class="sub-nav right">
+    <dt>Filter:</dt>
+    <dd {{action 'setUserFilter' 'all'}}><a>All</a></dd>
+    {{#each content}}
+        {{#if id}}
+        <dd {{action 'setUserFilter' this}}><a>{{name}}</a></dd>
+        {{/if}}
+    {{/each}}  
+</dl>
